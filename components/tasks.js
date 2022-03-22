@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 
-const Tasks = () => {
+const Tasks = ({ text }) => {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
         <View style={styles.rectangle}></View>
-        <Text style={styles.text}>Likes </Text>
+        <Text style={styles.text}>{text} </Text>
       </View>
       <View style={styles.circle}></View>
     </View>
@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 14,
     maxWidth: "80%",
+    textTransform: "capitalize",
   },
   circle: {
     width: 12,
