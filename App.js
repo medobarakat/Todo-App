@@ -20,7 +20,10 @@ export default function App() {
         <Tasks text={"task 3"} />
       </View>
       <View>
-        <KeyboardAvoidingView behavior="padding" style={styles.container2}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          style={styles.container2}
+        >
           <TextInput placeholder="Write A Task" style={styles.input} />
           <TouchableOpacity>
             <View style={styles.btncontainer}>
@@ -46,11 +49,8 @@ const styles = StyleSheet.create({
     marginTop: 94,
   },
   container2: {
-    width: "100%",
     position: "absolute",
-    top: 260,
-    flexDirection: "row",
-    justifyContent: "space-around",
+    bottom: 60,
   },
   input: {},
   btncontainer: {},
