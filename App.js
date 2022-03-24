@@ -6,10 +6,10 @@ import {
   KeyboardAvoidingView,
   Platform,
   TextInput,
+  ScrollView,
   TouchableOpacity,
 } from "react-native";
 import Tasks from "./components/tasks";
-
 export default function App() {
   return (
     <View style={styles.container}>
@@ -19,10 +19,11 @@ export default function App() {
         <Tasks text={"task 2"} />
         <Tasks text={"task 3"} />
       </View>
-      <View>
+      <ScrollView style={{ flex: 1 }}>
         <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          keyboardVerticalOffset={-500}
           style={styles.container2}
+          behavior="padding"
         >
           <TextInput placeholder="Write A Task" style={styles.input} />
           <TouchableOpacity>
@@ -31,7 +32,7 @@ export default function App() {
             </View>
           </TouchableOpacity>
         </KeyboardAvoidingView>
-      </View>
+      </ScrollView>
       <StatusBar style="auto" />
     </View>
   );
@@ -49,10 +50,32 @@ const styles = StyleSheet.create({
     marginTop: 94,
   },
   container2: {
-    position: "absolute",
-    bottom: 60,
+    marginTop: "50%",
+    width: "100%",
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
-  input: {},
-  btncontainer: {},
-  btn: {},
+  input: {
+    backgroundColor: "white",
+    fontSize: 15,
+    width: 260,
+    justifyContent: "center",
+    borderRadius: 50,
+    borderColor: "#c0c0c0",
+    borderWidth: 1,
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
+  btncontainer: {
+    backgroundColor: "white",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 50,
+    borderColor: "#c0c0c0",
+    borderWidth: 1,
+  },
+  btn: { fontSize: 20 },
 });
