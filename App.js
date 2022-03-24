@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
@@ -77,5 +78,7 @@ const styles = StyleSheet.create({
     borderColor: "#c0c0c0",
     borderWidth: 1,
   },
-  btn: { fontSize: 20 },
+  btn: {
+    fontSize: 20,
+  },
 });
