@@ -5,7 +5,6 @@ import {
   Text,
   View,
   KeyboardAvoidingView,
-  Platform,
   TextInput,
   ScrollView,
   TouchableOpacity,
@@ -16,7 +15,7 @@ export default function App() {
     <View style={styles.container}>
       <View>
         <Text style={styles.header}>Today's Tasks</Text>
-        <Tasks text={"task 1"} />
+        <Tasks text={"task 1 "} />
         <Tasks text={"task 2"} />
         <Tasks text={"task 3"} />
       </View>
