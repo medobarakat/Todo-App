@@ -8,16 +8,29 @@ import {
   TextInput,
   ScrollView,
   TouchableOpacity,
+  Keyboard,
 } from "react-native";
 import Tasks from "./components/tasks";
 export default function App() {
+  const [task, setTask] = useState("");
+  const [allTasks, setAllTasks] = useState([]);
+
+  const handlechange = () => {
+    Keyboard.dismiss();
+    setAllTasks([...allTasks, task]);
+    setTask(null);
+  };
+
   return (
     <View style={styles.container}>
       <View>
         <Text style={styles.header}>Today's Tasks</Text>
-        <Tasks text={"task 1 "} />
+        {allTasks.map((item, index) => {
+          return <Tasks key={index} text={item} />;
+        })}
+        {/* <Tasks text={"task  1 "} />
         <Tasks text={"task 2"} />
-        <Tasks text={"task 3"} />
+        <Tasks text={"task 3"} /> */}
       </View>
       <ScrollView style={{ flex: 1 }}>
         <KeyboardAvoidingView
@@ -25,10 +38,16 @@ export default function App() {
           style={styles.container2}
           behavior="padding"
         >
-          <TextInput placeholder="Write A Task" style={styles.input} />
+          <TextInput
+            placeholder="Write A Task"
+            style={styles.input}
+            onChangeText={(text) => setTask(text)}
+          />
           <TouchableOpacity>
             <View style={styles.btncontainer}>
-              <Text style={styles.btn}>+</Text>
+              <Text style={styles.btn} onPress={handlechange}>
+                +
+              </Text>
             </View>
           </TouchableOpacity>
         </KeyboardAvoidingView>
@@ -50,7 +69,7 @@ const styles = StyleSheet.create({
     marginTop: 94,
   },
   container2: {
-    marginTop: "50%",
+    marginTop: "90%",
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-around",
