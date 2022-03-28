@@ -21,16 +21,27 @@ export default function App() {
     setTask(null);
   };
 
+  const handleremove = (index) => {
+    let itemcopy = [...allTasks];
+    itemcopy.splice(index, 1);
+    setAllTasks(itemcopy);
+  };
+
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.header}>Today's Tasks</Text>
-        {allTasks.map((item, index) => {
-          return <Tasks key={index} text={item} />;
-        })}
-        {/* <Tasks text={"task  1 "} />
-        <Tasks text={"task 2"} />
-        <Tasks text={"task 3"} /> */}
+        <View style={styles.headerCompontnets}>
+          <Text style={styles.header}>Today's Tasks</Text>
+          <Text style={styles.subheader}>Made with : Ahmed Barakat</Text>
+        </View>
+        {allTasks.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            onPress={(index) => handleremove(index)}
+          >
+            <Tasks text={item} />
+          </TouchableOpacity>
+        ))}
       </View>
       <ScrollView style={{ flex: 1 }}>
         <KeyboardAvoidingView
@@ -62,11 +73,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#E8EAED",
   },
+  headerCompontnets: {
+    flexDirection: "column",
+    marginLeft: 20,
+    marginTop: 94,
+    justifyContent: "space-between",
+  },
   header: {
     fontSize: 24,
-    marginLeft: 20,
     fontWeight: "bold",
-    marginTop: 94,
+  },
+  subheader: {
+    marginTop: 5,
   },
   container2: {
     marginTop: "90%",
