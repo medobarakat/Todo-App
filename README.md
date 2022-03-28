@@ -3,29 +3,24 @@
 ## made with react native
 
 # Todo-App
-this is a Portfolio responsive Mobile App built with NextJs ,TypeScript ,  ReactJs , React Router
+this is a Portfolio responsive Mobile App built with React js , React Native .
 
-![screenshot](./public/screenshot.png)
+![screenshot](./assets/screenshot.PNG)
 
-## Live Link
 
-- Live: [DEMO](https://ahmedporfolio.vercel.app/)
 
 ## Built with
 
-- Next Js
 - React
-- TailWind
-- React Router
-- TypeScript
-- Pure JavaScript
+- React Native
+- JavaScript
 - HTML & Css
 
 ## Getting Started
 To get a local copy of the repository please run the following commands on your terminal:
 - ```$ cd <folder>```
-- ```$ git clone https://github.com/medobarakat/Portfolio-Site.git ```
-- ```$ cd Portfolio-Site ```
+- ```$ git clone https://github.com/medobarakat/TODO-APP.git ```
+- ```$ cd TODO-APP ```
 
 
 ## Authors
