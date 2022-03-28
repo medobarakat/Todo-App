@@ -19,8 +19,8 @@ this is a Portfolio responsive Mobile App built with React js , React Native .
 ## Getting Started
 To get a local copy of the repository please run the following commands on your terminal:
 - ```$ cd <folder>```
-- ```$ git clone https://github.com/medobarakat/TODO-APP.git ```
-- ```$ cd TODO-APP ```
+- ```$ git clone https://github.com/medobarakat/Todo-App.git ```
+- ```$ cd Todo-App ```
 
 
 ## Authors
