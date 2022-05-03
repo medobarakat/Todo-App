@@ -1,5 +1,5 @@
 # Todo-App
-this is a Portfolio responsive Mobile App built with React js , React Native 
+this is a Todo Mobile App built with React js , React Native 
 
 ![screenshot](./assets/screenshot.PNG)
 
