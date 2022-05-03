@@ -1,7 +1,3 @@
-
-
-## made with react native
-
 # Todo-App
 this is a Portfolio responsive Mobile App built with React js , React Native 
 
